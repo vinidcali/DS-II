@@ -20,7 +20,6 @@
 
 [PreV1 4 - 05/05]
 	Primeira versão de:
-		logico.brm
 		sql.sql
 	Terceira versão de:
 		Release Notes.txt

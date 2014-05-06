@@ -19,4 +19,5 @@
 	
 05/05 - Dia 4
 	Criação do modelo lógico de banco de dados e do código SQL para criação do banco.
+	#Criação do modelo lógico não foi possivel usando o BRModelo. Tarefa adiada até próxima aula.#
 	
