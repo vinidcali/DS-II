@@ -1,0 +1,27 @@
+[PreV1 1 - 29/04]
+	Primeira versão de:
+		cdu.asta
+		cdu.docx
+		der.brm
+		ativ+classes.asta
+		Release Notes.txt
+		Diário.txt
+
+[PreV1 2 - 30/04]
+	Segunda versão de:
+		ativ+classes.asta -> classes.asta
+		der.brm
+		Release Notes.txt
+		Diário.txt
+		
+[PreV1 3 - 02/05]
+	Primeira versão de:
+		prototipos.xml
+
+[PreV1 4 - 05/05]
+	Primeira versão de:
+		logico.brm
+		sql.sql
+	Terceira versão de:
+		Release Notes.txt
+		Diário.txt

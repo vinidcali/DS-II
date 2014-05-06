@@ -1,0 +1,22 @@
+29/04 - Dia 1
+	Estudo e instalação do GitHub.
+	Estudo do problema e do Documento de Visão para criação dos diagramas.
+	Definição da solução em forma de software.
+	Criação dos diagramas de caso de uso, de design (classes) e de banco de dados conceitual, bem como descrição textual dos casos de uso.
+	#Os diagramas de análise (atividade) e de banco de dados lógico serão criados somente após aprovação do cliente dos diagramas já feitos.#
+	
+30/04 - Dia 2
+	Atualização do diagrama de classes.
+	Encontro com cliente:
+		- todos os diagramas foram aprovados
+		- decidiu-se que o modelo conceitual de banco de dados seria o modelo de análise, não sendo necessário fazer o diagrama de atividade
+		- devido aos feriados, concordou-se em entregar menos do que o planejado para a Iteração I
+	Atualização do diagrama de banco de dados conceitual.
+	#Devido a mudança na entrega por falta de tempo, foi decidido que o template de layout não será utilizado nesta iteração. Será, então, utilizado o visual padrão do framework.#
+	
+02/05 - Dia 3
+	Criação do protótipo de telas.
+	
+05/05 - Dia 4
+	Criação do modelo lógico de banco de dados e do código SQL para criação do banco.
+	
