@@ -22,4 +22,8 @@
 
 06/05 - Dia 5
 	Atualização do código SQL com dados para teste.
+	Estudo aprofundado do framework Yii.
+
+07/05 - Dia 6
+	Primeira versão do sistema.
 	

@@ -33,3 +33,8 @@
 		Release Notes.txt
 		Diário.txt
 	#Agora organizado em pastas#
+
+[Versão1 1 - 06/05]
+	Sistema de login através do CPF e Senha do Professor.
+	Visualização das turmas do Professor logado.
+	Detalhes sobre cada turma: exibição das aulas cadastradas no calendário daquela turma.
