@@ -20,7 +20,16 @@
 
 [PreV1 4 - 05/05]
 	Primeira versão de:
+		logico.brm
 		sql.sql
 	Terceira versão de:
 		Release Notes.txt
 		Diário.txt
+
+[PreV1 5 - 06/05]
+	Segunda versão de:
+		sql.sql
+	Quarta versão de:
+		Release Notes.txt
+		Diário.txt
+	#Agora organizado em pastas#
