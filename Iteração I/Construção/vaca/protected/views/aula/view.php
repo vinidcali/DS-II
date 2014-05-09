@@ -3,16 +3,12 @@
 /* @var $model Aula */
 
 $this->breadcrumbs=array(
-	'Aulas'=>array('index'),
-	$model->id,
+	'Minhas Aulas',
+	'Aula ' . $model->id,
 );
 
 $this->menu=array(
-	array('label'=>'List Aula', 'url'=>array('index')),
-	array('label'=>'Create Aula', 'url'=>array('create')),
 	array('label'=>'Update Aula', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Aula', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Aula', 'url'=>array('admin')),
 );
 ?>
 

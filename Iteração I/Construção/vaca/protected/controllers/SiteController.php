@@ -92,11 +92,11 @@ class SiteController extends Controller
 			$model->attributes=$_POST['LoginForm'];
 			// validate user input and redirect to the previous page if valid
 			if($model->validate() && $model->login())
-				$this->render('minhaarea');
+				$this->redirect('index.php?r=calendario/index');
 			else
 				$this->render('index',array('model'=>$model));	
 		}else
-		 Yii::app()->user->IsGuest ? $this->render('index',array('model'=>$model)) : $this->render('minhaarea');
+		 Yii::app()->user->IsGuest ? $this->render('index',array('model'=>$model)) : $this->redirect('index.php?r=calendario/index');
 	}
 
 	/**

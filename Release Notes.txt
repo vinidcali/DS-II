@@ -1,0 +1,48 @@
+[PreV1 1 - 29/04]
+	Primeira versão de:
+		cdu.asta
+		cdu.docx
+		der.brm
+		ativ+classes.asta
+
+[PreV1 2 - 30/04]
+	Segunda versão de:
+		ativ+classes.asta -> classes.asta
+		der.brm
+		
+[PreV1 3 - 02/05]
+	Primeira versão de:
+		prototipos.xml
+
+[PreV1 4 - 05/05]
+	Primeira versão de:
+		logico.brm
+		sql.sql
+
+[PreV1 5 - 06/05]
+	Segunda versão de:
+		sql.sql
+	
+	#Agora tudo organizado em pastas!#
+
+[Versão1 1 - 07/05]
+	Sistema de login através do CPF e Senha do Professor.
+	Visualização das turmas do Professor logado.
+	Detalhes sobre cada turma: exibição das aulas cadastradas no calendário daquela turma.
+
+[Versão1 2 - 09/05]
+	Referente ao sistema:
+		Novo:
+			- Ao visualizar os detalhes de cada turma (suas aulas), agora é possível atualizar o conteúdo daquela aula.
+		Correção de bugs:
+			- Gera mensagem amigável invés de erro quando o professor logado não tem nenhuma turma.
+			- Links para páginas não existentes removidos.
+			- Exibe corretamente todas as turmas do professor.
+		Atualizado:
+			- Breadcrumbs atualizados.
+			- Mensagens do sistema agora estão em Português.
+
+	Referente aos documentos e diagramas:
+		cdu.docx e classes.asta atualizados para refletir características do framework.
+
+#################-- ENTREGA DA ITERAÇÃO 1 --#################

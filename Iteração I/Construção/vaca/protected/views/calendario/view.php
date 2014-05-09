@@ -22,17 +22,22 @@ $this->breadcrumbs=array(
 <h3>Minhas aulas nesta turma:</h3>
 
 <?php
-//$dataProvider=new CActiveDataProvider($model->aulas[0], array ('criteria'=>array('condition'=>'cal_id='.$model->id)));
-
+$oi = "oi";
 $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'aula-grid',
 	'dataProvider'=>$dataProvider,
 	'columns'=>array(
 		'dataHora',
 		'conteudo',
-		array(
-			'class'=>'CButtonColumn',
-		),
+		 array(
+            'class' => 'CButtonColumn',
+            'template' => '{update}',
+            'buttons' => array(
+                            'update' => array(
+                                        'url'=> '"index.php?r=aula/update&id=$data->id"',
+                            ),
+        	),
+    	),
 	),
 ));
 

@@ -12,7 +12,7 @@
 		- decidiu-se que o modelo conceitual de banco de dados seria o modelo de análise, não sendo necessário fazer o diagrama de atividade
 		- devido aos feriados, concordou-se em entregar menos do que o planejado para a Iteração I
 	Atualização do diagrama de banco de dados conceitual.
-	#Devido a mudança na entrega por falta de tempo, foi decidido que o template de layout não será utilizado nesta iteração. Será, então, utilizado o visual padrão do framework.#
+	#Devido a mudança na entrega por falta de tempo, foi decidido que a parte do CDU referente ao vínculo de aulas com avaliações e o template de layout não seriam implementados nesta iteração.#
 	
 02/05 - Dia 3
 	Criação do protótipo de telas.
@@ -25,5 +25,12 @@
 	Estudo aprofundado do framework Yii.
 
 07/05 - Dia 6
+	Mais estudo do framework Yii.
 	Primeira versão do sistema.
 	
+09/05 - Dia 7
+	Atualização de alguns diagramas para refletir as características do framework Yii.
+	Sistema atualizado e pronto para ser entregue ao cliente.
+	Entrega da Iteração 1.
+
+#################-- ENTREGA DA ITERAÇÃO 1 --#################

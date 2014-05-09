@@ -15,17 +15,15 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'conteudo'); ?>
-		<?php echo $form->textField($model,'conteudo',array('size'=>60,'maxlength'=>1000)); ?>
+		<?php echo $form->textArea($model,'conteudo',array('cols'=>60, 'rows'=>'5', 'maxlength'=>1000)); ?>
 		<?php echo $form->error($model,'conteudo'); ?>
 	</div>
 
-	<div class="row">
+<!--	<div class="row">
 		<?php echo $form->labelEx($model,'dataHora'); ?>
 		<?php echo $form->textField($model,'dataHora'); ?>
 		<?php echo $form->error($model,'dataHora'); ?>
@@ -36,7 +34,7 @@
 		<?php echo $form->textField($model,'cal_id'); ?>
 		<?php echo $form->error($model,'cal_id'); ?>
 	</div>
-
+-->
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>

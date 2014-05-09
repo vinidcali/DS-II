@@ -1,3 +1,7 @@
+CREATE DATABASE vacademico;
+
+USE vacademico;
+
 CREATE TABLE Pessoa (
 	id INTEGER NOT NULL AUTO_INCREMENT,
 	nome VARCHAR(50) NOT NULL,
@@ -32,7 +36,7 @@ CREATE TABLE Etapa (
 	codigo VARCHAR(20) NOT NULL,
 	disc_id INTEGER NOT NULL,
 	PRIMARY KEY (id),
-	UNIQUE KEY (codigo),
+	UNIQUE KEY (disc_id, codigo),
 	FOREIGN KEY (disc_id) REFERENCES Disciplina (id)
 ) ENGINE=InnoDB;
 
@@ -41,7 +45,7 @@ CREATE TABLE Calendario (
 	disc_id INTEGER NOT NULL,
 	nome VARCHAR (20) NOT NULL,
 	PRIMARY KEY (id),
-	UNIQUE KEY (nome),
+	UNIQUE KEY (disc_id, nome),
 	FOREIGN KEY (disc_id) REFERENCES Disciplina (id)
 ) ENGINE=InnoDB;
 
@@ -57,21 +61,29 @@ CREATE TABLE Aula (
 
 
 INSERT INTO Pessoa VALUES
-	(NULL, "Pessoa 1", "p1@gmail.com", "p1", 00001),
-    (NULL, "Pessoa 2", "p2@gmail.com", "p2", 00002),
-    (NULL, "Pessoa 3", "p2@gmail.com", "p3", 00003)
+	(NULL, "Bilbo Baggins", "bilbo@gmail.com", "12345", 12345),
+    (NULL, "Thorin Oakenshield", "thorin@gmail.com", "1212", 1212),
+    (NULL, "Gandalf", "gandalf@gmail.com", "666", 666)
 ;
 
-INSERT INTO Professor (id) VALUES (1), (2);
+INSERT INTO Professor (id) VALUES (1), (2), (3);
 
 INSERT INTO Disciplina VALUES
-	(NULL, "Banco de Dados I", NULL, "ES.BD1", 1),
-	(NULL, "Programação I", 60, "EM.P1", 2)
+	(NULL, "Disciplina Teste I", 60, "ES.DT1", 1),
+	(NULL, "Disciplina Teste I", 60, "EM.DT1", 1),
+	(NULL, "Disciplina para Testes", 60, "EM.DPT", 2)
+;
+
+INSERT INTO Etapa VALUES 
+	(NULL, "E1", 1),
+	(NULL, "E1", 2),
+	(NULL, "E1", 3)
 ;
 
 INSERT INTO Calendario VALUES
 	(NULL, 1, "ADS2012"),
-	(NULL, 2, "TEC2014")
+	(NULL, 2, "TEC2014"),
+	(NULL, 3, "TEC2014")
 ;
 
 INSERT INTO Aula VALUES 
@@ -79,7 +91,14 @@ INSERT INTO Aula VALUES
 	(NULL, NULL, "2014-05-10 19:00:00", 1),
 	(NULL, NULL, "2014-05-13 19:00:00", 1),
 	(NULL, NULL, "2014-05-15 19:00:00", 1),
-	(NULL, NULL, "2014-05-05 09:00:00", 2),
+	(NULL, NULL, "2014-05-20 19:00:00", 1),
+	(NULL, NULL, "2014-05-23 19:00:00", 1),
+	(NULL, NULL, "2014-05-05 10:00:00", 2),
 	(NULL, NULL, "2014-05-10 09:00:00", 2),
-	(NULL, NULL, "2014-05-13 09:00:00", 2)
+	(NULL, NULL, "2014-05-13 10:00:00", 2),
+	(NULL, NULL, "2014-05-15 09:00:00", 2),
+	(NULL, NULL, "2014-05-05 09:00:00", 3),
+	(NULL, NULL, "2014-05-10 10:00:00", 3),
+	(NULL, NULL, "2014-05-13 09:00:00", 3),
+	(NULL, NULL, "2014-05-15 10:00:00", 3)
 ;

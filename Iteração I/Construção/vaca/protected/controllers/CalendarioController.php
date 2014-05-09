@@ -128,12 +128,17 @@ class CalendarioController extends Controller
 	{
 		$id = Yii::app()->user->id;
 		
-		$dataProvider=new CActiveDataProvider('Calendario', array (
+		$discsDoProf = Disciplina::model()->findAllByAttributes(array('prof_id'=>$id));
+		$dataProviders = array();
+		foreach ($discsDoProf as $disc) {
+			$dataProviders[]=new CActiveDataProvider('Calendario', array (
 		                                      'criteria'=>array(
-												'condition'=>'disc_id=(SELECT id FROM Disciplina WHERE prof_id='.$id.')',
+												'condition'=>'disc_id =' . $disc->id,
 		                                     )));
+		}
+
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+			'dataProviders'=>$dataProviders,
 		));
 	}
 

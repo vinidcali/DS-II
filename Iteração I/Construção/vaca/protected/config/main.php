@@ -8,6 +8,7 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'vAcadêmico',
+	'language'=>'pt_br',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -54,7 +55,7 @@ return array(
 	*/	// uncomment the following to use a MySQL database
 		
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=vaca',
+			'connectionString' => 'mysql:host=localhost;dbname=vacademico',
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => '',
