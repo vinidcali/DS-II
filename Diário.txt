@@ -34,3 +34,10 @@
 	Entrega da Iteração 1.
 
 #################-- ENTREGA DA ITERAÇÃO 1 --#################
+
+21/05 - Dia 8
+	Avaliação da Iteração 2.
+	Criação do modelo conceitual do banco de dados.
+
+26/05 - Dia 9
+	Estudo sobre Testes com o framework Yii.

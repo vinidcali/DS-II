@@ -46,3 +46,6 @@
 		cdu.docx e classes.asta atualizados para refletir características do framework.
 
 #################-- ENTREGA DA ITERAÇÃO 1 --#################
+
+[PreV2 1 - 09/05]
+	Primeira versão de der2.brm
