@@ -47,5 +47,22 @@
 
 #################-- ENTREGA DA ITERAÇÃO 1 --#################
 
-[PreV2 1 - 09/05]
+[PreV2 1 - 21/05]
 	Primeira versão de der2.brm
+
+[PreV2 2 - 28/05]
+	Primeira versão de:
+		cdu2.asta
+		cdu2.docx
+		classes2.asta
+
+	Segunda versão de:
+		der2.brm
+
+[PreV2 2 - 30/05]
+	Primeira versão de:
+		logico2.brm
+		sql.sql
+
+	Terceira versão de:
+		der2.brm

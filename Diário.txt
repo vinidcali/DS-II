@@ -36,8 +36,17 @@
 #################-- ENTREGA DA ITERAÇÃO 1 --#################
 
 21/05 - Dia 8
-	Avaliação da Iteração 2.
+	Avaliação da Iteração 2. Caso de Uso "Fechar Período" movido para Iteração 3.
 	Criação do modelo conceitual do banco de dados.
 
 26/05 - Dia 9
 	Estudo sobre Testes com o framework Yii.
+
+28/05 - Dia 10
+	Atualização do modelo conceitual do banco de dados.
+	Criação do diagrama de casos de uso e do documento de casos de uso.
+	Criação do diagrama de classes.
+
+30/05 - Dia 11
+	Atualização do modelo conceitual do banco de dados e do diagrama de classes.
+	Criação do modelo lógico de banco de dados e do código SQL para gerar o banco, a partir do arquivo "sql.sql" da Iteração 1.
