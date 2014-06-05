@@ -81,3 +81,11 @@
 
  	Terceira versão de:
  		sql.sql
+
+[Versão2 1 - 04/06]
+	Super atualização do banco de dados: novas tabelas, ajustes nas tabelas provenientes da Iteração I e adição de triggers.
+	Adição do Módulo de Avaliações, onde o Professor pode criar, atualizar e deletar avaliações, bem como alterar as notas dos alunos.
+		- As notas são geradas/excluídas automaticamente quando o Professor adiciona/remove uma nova avaliação, de modo que o Professor não pode criá-las/excluí-las, somente altera-las.
+	Ao visualizar uma turma em específico, o Professor pode agora ver as médias dos alunos daquela turma.
+		- As médias são calculadas automaticamente a partir das notas. O Professor pode apenas visualiza-las.
+	Adição do Módulo de Frequências (chamada), onde o Professor informa se o aluno estava presente ou não na aula.

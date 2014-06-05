@@ -56,5 +56,7 @@
 
 03/06 - Dia 13
 	Criação dos protótipos de tela.
-	Estudo e testes com alguns temas e templates de layout.
+	Estudo e testes com alguns temas e templates de layout. Devido a prioridade do layout/detalhes acontecer só na Iteração 3, foi decidido que mudanças nesse aspecto serão realizadas somente após conclusão das outras atividades ainda por fazer desta iteração.
 
+04/06 - Dia 14
+	Desenvolvimento do código-fonte referente aos casos de uso desta iteração. Todos os casos de uso foram codificados e estão funcionando. Entretanto, é necessário ajustar alguns detalhes e a forma como o usuário interage com as novas funcionalidades.
