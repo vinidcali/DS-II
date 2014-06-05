@@ -59,10 +59,25 @@
 	Segunda versão de:
 		der2.brm
 
-[PreV2 2 - 30/05]
+[PreV2 3 - 30/05]
 	Primeira versão de:
-		logico2.brm
 		sql.sql
 
 	Terceira versão de:
 		der2.brm
+
+[PreV2 4 - 02/06]
+	Segunda versão de:
+		sql.sql
+		cdu2.docx
+		classes2.asta
+
+	Quarta versão de:
+		der2.brm
+
+ [PreV2 5 - 03/06]
+ 	Primeira versão de:
+ 		prototipos.xml
+
+ 	Terceira versão de:
+ 		sql.sql

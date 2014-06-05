@@ -6,7 +6,7 @@ CREATE TABLE Pessoa (
 	id INTEGER NOT NULL AUTO_INCREMENT,
 	nome VARCHAR(50) NOT NULL,
 	email VARCHAR(20),
-	senha VARCHAR(50) NOT NULL,
+	senha VARCHAR(50),
 	cpf INTEGER NOT NULL,
 	PRIMARY KEY (id),
 	UNIQUE KEY (cpf)
@@ -48,7 +48,7 @@ CREATE TABLE Etapa (
 	FOREIGN KEY (disc_id) REFERENCES Disciplina (id)
 ) ENGINE=InnoDB;
 
-CREATE TABLE Inscrição (
+CREATE TABLE Inscricao (
 	id INTEGER NOT NULL AUTO_INCREMENT,
 	aluno_id INTEGER NOT NULL,
 	disc_id INTEGER NOT NULL,
@@ -98,7 +98,7 @@ CREATE TABLE Avaliacao (
 	FOREIGN KEY (aula_id) REFERENCES Aula (id)
 ) ENGINE=InnoDB;
 
-CREATE TABLE Resultado (
+CREATE TABLE Resultados (
 	id INTEGER NOT NULL AUTO_INCREMENT,
 	nota DOUBLE,
 	aval_id INTEGER NOT NULL,
@@ -121,36 +121,109 @@ CREATE TABLE Medias (
 
 
 delimiter |
-	CREATE TRIGGER gerarMedia AFTER INSERT ON Inscricao
+	CREATE TRIGGER gerarMediaEfreq AFTER INSERT ON Inscricao
 		FOR EACH ROW
 		BEGIN
-			DECLARE etapa_id INT;
-			DECLARE aluno_id INT;
+			DECLARE id_etapa INT;
+			DECLARE id_aula INT;
+			DECLARE ok INT DEFAULT false;
+			DECLARE cur CURSOR FOR SELECT Aula.id FROM Aula WHERE cal_id = (SELECT id FROM Calendario WHERE disc_id = NEW.disc_id);
+			DECLARE CONTINUE HANDLER FOR NOT FOUND SET ok = TRUE;
 
-			SET etapa_id = SELECT id FROM Etapa WHERE Etapa.disc_id = NEW.disc_id;
-			SET aluno_id = NEW.aluno_id;
+			OPEN cur;
+		        loopAulas: LOOP
+		            FETCH cur INTO id_aula;
+		            IF ok THEN
+		                LEAVE loopAulas;
+		            END IF;
+		            INSERT INTO Frequencia VALUES (NULL, 1, NEW.aluno_id, id_aula); 
+		        END LOOP;
+		    CLOSE cur;
 
-			INSERT INTO Medias VALUES (NULL, 0.00, aluno_id, etapa_id); 
+
+			SET id_etapa = (SELECT id FROM Etapa WHERE Etapa.disc_id = NEW.disc_id);
+			INSERT INTO Medias VALUES (NULL, 0.00, NEW.aluno_id, id_etapa); 
 		END;
 	|
 
-
-	CREATE TRIGGER calcMedia AFTER INSERT ON Resultado
+	CREATE TRIGGER gerarFrequencia AFTER INSERT ON Inscricao
 		FOR EACH ROW
 		BEGIN
-			DECLARE peso DOUBLE;
+			DECLARE id_aula INT;
+			DECLARE ok INT DEFAULT false;
+			DECLARE cur CURSOR FOR SELECT Aula.id FROM Aula WHERE cal_id = (SELECT id FROM Calendario WHERE disc_id = NEW.disc_id);
+			DECLARE CONTINUE HANDLER FOR NOT FOUND SET ok = TRUE;
+
+		    OPEN cur;
+		        loopAulas: LOOP
+		            FETCH cur INTO id_aula;
+		            IF ok THEN
+		                LEAVE loopAulas;
+		            END IF;
+		            INSERT INTO Frequencia VALUES (NULL, 1, NEW.aluno_id, id_aula); 
+		        END LOOP;
+		    CLOSE cur;
+		END;
+	|
+
+	CREATE TRIGGER gerarResultados AFTER INSERT ON Avaliacao
+		FOR EACH ROW
+		BEGIN
+			DECLARE ok INT DEFAULT false;
+			DECLARE id_aluno INT;
+			DECLARE cur CURSOR FOR SELECT aluno_id FROM Inscricao WHERE disc_id = (SELECT disc_id FROM Etapa WHERE id = NEW.etapa_id);
+			DECLARE CONTINUE HANDLER FOR NOT FOUND SET ok = true;
+
+		    OPEN cur;
+		        loopAlunos: LOOP
+		            FETCH cur INTO id_aluno;
+		            IF ok THEN
+		                LEAVE loopAlunos;
+		            END IF;
+		            INSERT INTO Resultados VALUES (NULL, 0.00, NEW.id, id_aluno); 
+		        END LOOP;
+		    CLOSE cur;
+		END;
+	|
+
+	CREATE TRIGGER apagarResultados BEFORE DELETE ON Avaliacao
+		FOR EACH ROW
+		BEGIN
+			DECLARE ok INT DEFAULT false;
+			DECLARE id_aluno INT;
+			DECLARE cur CURSOR FOR SELECT aluno_id FROM Inscricao WHERE disc_id = (SELECT disc_id FROM Etapa WHERE id = OLD.etapa_id);
+			DECLARE CONTINUE HANDLER FOR NOT FOUND SET ok = true;
+
+		    OPEN cur;
+		        loopAlunos: LOOP
+		            FETCH cur INTO id_aluno;
+		            IF ok THEN
+		                LEAVE loopAlunos;
+		            END IF;
+		            DELETE FROM Resultados WHERE aluno_id = id_aluno AND aval_id = OLD.id; 
+		        END LOOP;
+		    CLOSE cur;
+		END;
+	|
+
+	CREATE TRIGGER calcMedia AFTER UPDATE ON Resultados
+		FOR EACH ROW
+		BEGIN
+			DECLARE ppeso DOUBLE;
 			DECLARE nota DOUBLE;
-			DECLARE aluno_id INT;
-			DECLARE etapa_id INT;
+			DECLARE aluno INT;
+			DECLARE etapa INT;
 			DECLARE mediaAnterior DOUBLE;
+			DECLARE mediaDesteRes DOUBLE;
 
-			SET peso = SELECT peso FROM Avaliacao WHERE Avaliacao.id = NEW.aval_id;
+			SET ppeso = (SELECT peso FROM Avaliacao WHERE Avaliacao.id = NEW.aval_id);
 			SET nota = NEW.nota;
-			SET aluno_id = NEW.aluno_id;
-			SET etapa_id = SELECT etapa_id FROM Avaliacao WHERE Avaliacao.id = NEW.aval_id;  
-			SET mediaAnterior = SELECT media FROM Medias WHERE aluno_id = aluno_id AND etapa_id = etapa_id;
+			SET aluno = NEW.aluno_id;
+			SET etapa = (SELECT etapa_id FROM Avaliacao WHERE Avaliacao.id = NEW.aval_id);  
+			SET mediaAnterior = (SELECT media FROM Medias WHERE aluno_id = aluno AND etapa_id = etapa);
+			SET mediaDesteRes = mediaAnterior + nota * ppeso / 10;
 
-			UPDATE Medias SET media = (mediaAnterior + nota * peso / 10) WHERE aluno_id = aluno_id AND etapa_id = etapa_id;
+			UPDATE Medias SET media = mediaDesteRes WHERE aluno_id = aluno AND etapa_id = etapa;
 		END;
 	|
 delimiter ;
@@ -158,11 +231,20 @@ delimiter ;
 
 INSERT INTO Pessoa VALUES
 	(NULL, "Bilbo Baggins", "bilbo@gmail.com", "12345", 12345),
-    (NULL, "Thorin Oakenshield", "thorin@gmail.com", "1212", 1212),
-    (NULL, "Gandalf", "gandalf@gmail.com", "666", 666)
+    (NULL, "Elrond Half-elven", "elrond@gmail.com", "1212", 1212),
+    (NULL, "Gandalf", "gandalf@gmail.com", "666", 666),
+    (NULL, "Fili", NULL, NULL, 1111),
+    (NULL, "Kili", NULL, NULL, 2222),
+    (NULL, "Ori", NULL, NULL, 3333),
+    (NULL, "Nori", NULL, NULL, 4444),
+    (NULL, "Dori", NULL, NULL, 5555),
+    (NULL, "Oin", NULL, NULL, 6666),
+    (NULL, "Gloin", NULL, NULL, 7777),
+    (NULL, "Legolas", NULL, NULL, 242424)
 ;
 
 INSERT INTO Professor (id) VALUES (1), (2), (3);
+INSERT INTO Aluno (id) VALUES (4), (5), (6), (7), (8), (9), (10);
 
 INSERT INTO Disciplina VALUES
 	(NULL, "Disciplina Teste I", 60, "ES.DT1", 1),
@@ -197,4 +279,28 @@ INSERT INTO Aula VALUES
 	(NULL, NULL, "2014-05-10 10:00:00", 3),
 	(NULL, NULL, "2014-05-13 09:00:00", 3),
 	(NULL, NULL, "2014-05-15 10:00:00", 3)
+;
+
+INSERT INTO Inscricao VALUES
+	(NULL, 4, 1),
+	(NULL, 5, 2),
+	(NULL, 6, 2),
+	(NULL, 7, 1),
+	(NULL, 8, 1),
+	(NULL, 9, 3),
+	(NULL, 10, 1)
+;
+
+INSERT INTO Avaliacao VALUES 
+	(NULL, "Prova 1", 2.5, 1, NULL),
+	(NULL, "Trabalho em grupo", 4, 1, 6),
+	(NULL, "Dever de casa", 0.5, 2, NULL),
+	(NULL, "Prova 1", 2, 3, NULL)
+;
+
+INSERT INTO Resultados VALUES
+	(NULL, 8, 1, 4),
+	(NULL, 10, 1, 7),
+	(NULL, 5, 1, 8),
+	(NULL, 3, 1, 10),
 ;

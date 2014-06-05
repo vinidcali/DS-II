@@ -49,4 +49,12 @@
 
 30/05 - Dia 11
 	Atualização do modelo conceitual do banco de dados e do diagrama de classes.
-	Criação do modelo lógico de banco de dados e do código SQL para gerar o banco, a partir do arquivo "sql.sql" da Iteração 1.
+	Criação do código SQL para gerar o banco, a partir do arquivo "sql.sql" da Iteração 1.
+
+02/06 - Dia 12
+	Atualização do código SQL, do modelo conceitual de banco de dados, do diagrama de classes e do documento de casos de uso.
+
+03/06 - Dia 13
+	Criação dos protótipos de tela.
+	Estudo e testes com alguns temas e templates de layout.
+
