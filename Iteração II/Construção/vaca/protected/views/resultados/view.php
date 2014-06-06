@@ -1,22 +1,22 @@
 <?php
-/* @var $this FrequenciaController */
-/* @var $model Frequencia */
+/* @var $this ResultadosController */
+/* @var $model Resultados */
 
 $this->breadcrumbs=array(
-	'Frequencias'=>array('index'),
+	'Resultadoses'=>array('index'),
 	$model->id,
 );
 
 ?>
 
-<h1>View Frequencia #<?php echo $model->id; ?></h1>
+<h1>View Resultados #<?php echo $model->id; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',
-		'presente',
+		'nota',
+		'aval_id',
 		'aluno_id',
-		'aula_id',
 	),
 )); ?>

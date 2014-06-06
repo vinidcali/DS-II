@@ -7,7 +7,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Criar Avaliação', 'url'=>array('create')),
+	array('label'=>'Criar Avaliação', 'url'=>array('create&etapa='.$_GET['id'])),
 );
 ?>
 
@@ -38,13 +38,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
             'template' => '{update}{delete}',
             'buttons' => array(
                             'delete' => array(
-                                              'visible'=>'function($data) {
-                                                $contador = 0;
-                                                foreach($data->resultadoses as $res) {
-                                                  if ($res.nota > 0) $contador++;
-                                                }
-                                                return $contador>0?true:false;
-                                              }',
+                                            //  'visible'=>'array_sum($data->resultadoses) == 0',
                                        //'click'=>'js: function(){alert("oi");}',
                             ),
         	),

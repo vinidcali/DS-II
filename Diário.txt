@@ -62,5 +62,12 @@
 	Desenvolvimento do código-fonte referente aos casos de uso desta iteração. Todos os casos de uso foram codificados e estão funcionando. Entretanto, é necessário ajustar alguns detalhes e a forma como o usuário interage com as novas funcionalidades.
 
 05/06 - Dia 15
-	Ajustes nos códigos de modo que só seja apresentado o que é realmente necessário.
-	Realizado estudo profundo de JavaScript/AJAX no Yii, com alguns testes. Entretanto, parece ser mais complexo do que eu imaginava, desse modo, decidi que para esta iteração, todas as funcionalidades do sistema continuarão sem AJAX.
+	Ajustes nos códigos (nada realmente novo).
+	Realizado estudo de JavaScript/AJAX no Yii, com alguns testes. Entretanto, até mesmo os testes mais simples não funcionaram, ocorreram alguns comportamentos estranhos... Parece ser mais complexo do que eu imaginava. Decidi que para esta iteração todas as funcionalidades do sistema continuarão sem AJAX.
+
+06/06 - Dia 16
+	Vários testes no sistema para garantir que tudo estava funcionando (e o que não estava deve estar agora! c: ).
+	Últimos ajustes nos diagramas para suas versões finais de entrega.
+	Preparação da apresentação de entrega.
+	
+#################-- ENTREGA DA ITERAÇÃO 2 --#################

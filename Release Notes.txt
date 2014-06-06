@@ -77,7 +77,7 @@
 
  [PreV2 5 - 03/06]
  	Primeira versão de:
- 		prototipos.xml
+ 		prototipos2.xml
 
  	Terceira versão de:
  		sql.sql
@@ -91,5 +91,17 @@
 	Adição do Módulo de Frequências (chamada), onde o Professor informa se o aluno estava presente ou não na aula.
 
 [Versão2 2 - 05/06]
-	Correção e ajuste de pequenos detalhes. Todos os links que são necessários aos Casos de Uso agora funcionam e os que não são foram removidos.
+	Correção e ajuste de pequenos detalhes.
+	Atualizado o "banco.sql" da pasta data.
 	Alguns códigos foram modificados/adicionados devido aos testes com JavaScript/AJAX (veja mais detalhes no Diário).
+
+[Versão2 3 - 06/06]
+	Referente ao sistema:
+		- Mais alguns detalhes acertados.
+		- Sistema apresentável para entrega.
+
+	Referente aos diagramas e documentos:
+		- Preparados para versão de entrega (transformados em PDF, imagens, etc).
+		- prototipos2.xml, sql.sql e logico2.brm atualizados.
+
+#################-- ENTREGA DA ITERAÇÃO 2 --#################

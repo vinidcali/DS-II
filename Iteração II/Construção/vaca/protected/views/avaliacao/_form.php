@@ -37,6 +37,11 @@
 		<?php echo $form->error($model,'aula_id'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->hiddenField($model,'etapa_id', array('value'=>(isset($_GET['etapa']) ? $_GET['etapa'] : $model->etapa->id))); ?>
+		<?php echo $form->error($model,'etapa_id'); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>

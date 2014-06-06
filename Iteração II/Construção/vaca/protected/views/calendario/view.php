@@ -11,7 +11,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'Avaliações', 'url'=>array('avaliacao/index&id=' . $model->disc->id)),
-	array('label'=>'Ver Médias', 'url'=>array('medias/index')),
+	array('label'=>'Ver Médias', 'url'=>array('medias/index&id=' . $_GET['id'])),
 );
 ?>
 
@@ -36,19 +36,6 @@ $this->widget('zii.widgets.grid.CGridView', array(
         'id:text:#',
 		'dataHora',
 		'conteudo',
-		array(
-            'class' => 'CButtonColumn',
-            'header' => 'Editar Frequência',
-            'template' => '{freq}',
-            'buttons' => array(
-                            'freq' => array(
-                                       'url'=> '"index.php?r=frequencia/index&id=$data->id"',
-                                
-                          //  'click'=>'abreFreq',
-                          //            'options' => array('onClick' => "abreFreq(this);"),
-                            ),
-        	),
-    	),
 		 array(
             'class' => 'CButtonColumn',
             'header' => 'Editar Conteúdo',
@@ -61,6 +48,19 @@ $this->widget('zii.widgets.grid.CGridView', array(
                             ),
         	),
     	),
+        array(
+            'class' => 'CButtonColumn',
+            'header' => 'Editar Frequência',
+            'template' => '{freq}',
+            'buttons' => array(
+                            'freq' => array(
+                                       'url'=> '"index.php?r=frequencia/index&id=$data->id"',
+                                
+                          //  'click'=>'abreFreq',
+                          //            'options' => array('onClick' => "abreFreq(this);"),
+                            ),
+            ),
+        ),
 	),
 ));
 

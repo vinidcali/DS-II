@@ -15,8 +15,8 @@ $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'resultados-grid',
 	'dataProvider'=>$dataProvider,
 	'columns'=>array(
-		'nota',
 		'aluno.pessoa.nome',
+		'nota',
 		 array(
             'class' => 'CButtonColumn',
             'template' => '{update}',

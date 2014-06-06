@@ -120,9 +120,12 @@ class MediasController extends Controller
 	/**
 	 * Lists all models.
 	 */
-	public function actionIndex()
+	public function actionIndex($id)
 	{
-		$dataProvider=new CActiveDataProvider('Medias');
+		$dataProvider=new CActiveDataProvider('Medias', array (
+		                                      'criteria'=>array(
+												'condition'=>'etapa_id = (SELECT id FROM Etapa WHERE disc_id = ' . $id . ')',
+		                                     )));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
