@@ -32,12 +32,6 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'etapa_id'); ?>
-		<?php echo $form->textField($model,'etapa_id'); ?>
-		<?php echo $form->error($model,'etapa_id'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->labelEx($model,'aula_id'); ?>
 		<?php echo $form->textField($model,'aula_id'); ?>
 		<?php echo $form->error($model,'aula_id'); ?>

@@ -2,7 +2,7 @@
 /* @var $this CalendarioController */
 /* @var $model Calendario */
 
-Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/protected/scripts.js');
+Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/scripts.js');
 
 $this->breadcrumbs=array(
 	'Minhas Turmas'=>array('index'),
@@ -29,11 +29,11 @@ $this->menu=array(
 <h3>Minhas aulas nesta turma:</h3>
 
 <?php
-//echo "<pre>"; print_r($model->aulas); exit;
 $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'aula-grid',
 	'dataProvider'=>$dataProvider,
 	'columns'=>array(
+        'id:text:#',
 		'dataHora',
 		'conteudo',
 		array(
@@ -42,8 +42,10 @@ $this->widget('zii.widgets.grid.CGridView', array(
             'template' => '{freq}',
             'buttons' => array(
                             'freq' => array(
-                                        'url'=> '"index.php?r=frequencia/index&id=$data->id"',
-                                        //'click'=>'js: function(){alert("oi");}',
+                                       'url'=> '"index.php?r=frequencia/index&id=$data->id"',
+                                
+                          //  'click'=>'abreFreq',
+                          //            'options' => array('onClick' => "abreFreq(this);"),
                             ),
         	),
     	),
@@ -55,6 +57,7 @@ $this->widget('zii.widgets.grid.CGridView', array(
                             'update' => array(
                                         'url'=> '"index.php?r=aula/update&id=$data->id"',
                                         //'click'=>'js: function(){alert("oi");}',
+                                      //  'click'=>'editarConteudo',
                             ),
         	),
     	),

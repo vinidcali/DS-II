@@ -37,6 +37,7 @@ class Avaliacao extends CActiveRecord
 			array('etapa_id, aula_id', 'numerical', 'integerOnly'=>true),
 			array('peso', 'numerical'),
 			array('nome', 'length', 'max'=>30),
+		//	array('aula_id'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, nome, peso, etapa_id, aula_id', 'safe', 'on'=>'search'),

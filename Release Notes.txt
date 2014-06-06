@@ -89,3 +89,7 @@
 	Ao visualizar uma turma em específico, o Professor pode agora ver as médias dos alunos daquela turma.
 		- As médias são calculadas automaticamente a partir das notas. O Professor pode apenas visualiza-las.
 	Adição do Módulo de Frequências (chamada), onde o Professor informa se o aluno estava presente ou não na aula.
+
+[Versão2 2 - 05/06]
+	Correção e ajuste de pequenos detalhes. Todos os links que são necessários aos Casos de Uso agora funcionam e os que não são foram removidos.
+	Alguns códigos foram modificados/adicionados devido aos testes com JavaScript/AJAX (veja mais detalhes no Diário).

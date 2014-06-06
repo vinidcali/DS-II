@@ -60,3 +60,7 @@
 
 04/06 - Dia 14
 	Desenvolvimento do código-fonte referente aos casos de uso desta iteração. Todos os casos de uso foram codificados e estão funcionando. Entretanto, é necessário ajustar alguns detalhes e a forma como o usuário interage com as novas funcionalidades.
+
+05/06 - Dia 15
+	Ajustes nos códigos de modo que só seja apresentado o que é realmente necessário.
+	Realizado estudo profundo de JavaScript/AJAX no Yii, com alguns testes. Entretanto, parece ser mais complexo do que eu imaginava, desse modo, decidi que para esta iteração, todas as funcionalidades do sistema continuarão sem AJAX.

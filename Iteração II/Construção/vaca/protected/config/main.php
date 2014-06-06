@@ -82,14 +82,6 @@ return array(
 				*/
 			),
 		),
-		'clientScript'=>array(
-            'packages'=>array(
-                'jquery'=>array(
-                    'baseUrl'=>'//code.jquery.com/jquery-2.1.1.min.js',
-                    'js'=>array('jquery.min.js'),
-                )
-            ),
-        ),
 	),
 
 	// application-level parameters that can be accessed

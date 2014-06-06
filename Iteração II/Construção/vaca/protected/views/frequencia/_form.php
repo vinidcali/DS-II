@@ -25,18 +25,6 @@
 		<?php echo $form->error($model,'presente'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'aluno_id'); ?>
-		<?php echo $form->textField($model,'aluno_id'); ?>
-		<?php echo $form->error($model,'aluno_id'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'aula_id'); ?>
-		<?php echo $form->textField($model,'aula_id'); ?>
-		<?php echo $form->error($model,'aula_id'); ?>
-	</div>
-
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
