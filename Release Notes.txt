@@ -105,3 +105,9 @@
 		- prototipos2.xml, sql.sql e logico2.brm atualizados.
 
 #################-- ENTREGA DA ITERAÇÃO 2 --#################
+
+[PreV3 1 - 17/06]
+	Primeira versão de:
+		cdu3.asta
+		cdu3.docx
+		classes3.asta

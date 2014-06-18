@@ -71,3 +71,8 @@
 	Preparação da apresentação de entrega.
 	
 #################-- ENTREGA DA ITERAÇÃO 2 --#################
+
+17/06 - Dia 17
+	Avaliação da Iteração 3.
+	Realizada a documentação/diagramação do único Caso de Uso restante no projeto: Fechar Período.
+		Este CDU se resume a geração de um arquivo, não sendo representado em todos os diagramas até então utilizados. Por isso, para esta Iteração não haverá protótipos de tela nem modelos de banco de dados.
