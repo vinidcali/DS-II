@@ -76,3 +76,9 @@
 	Avaliação da Iteração 3.
 	Realizada a documentação/diagramação do único Caso de Uso restante no projeto: Fechar Período.
 		Este CDU se resume a geração de um arquivo, não sendo representado em todos os diagramas até então utilizados. Por isso, para esta Iteração não haverá protótipos de tela nem modelos de banco de dados.
+
+07/07 - Dia 18
+	Estudo e testes de criação de arquivos PDF. Estudo das extensões para Yii: Yii-PDF e ETcPdf... Nada deu muito certo.
+
+08/07 - Dia 19
+	Depois de muito tentar, continua sendo complicado demais parar gerar os PDFs. Foi decidido então entregar a ultima iteração pela metade: os códigos testes de criação do PDF estão presentes, entretanto a funcionalidade não funciona.

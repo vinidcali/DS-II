@@ -111,3 +111,6 @@
 		cdu3.asta
 		cdu3.docx
 		classes3.asta
+
+[Versão3 1 - 09/07]
+	Sistema com algumas atualizações. Principalmente os códigos referentes aos testes com geração de arquivos PDF.
